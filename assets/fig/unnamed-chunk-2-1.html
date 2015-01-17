@@ -1,0 +1,207 @@
+<!doctype HTML>
+<meta charset = 'utf-8'>
+<html>
+  <head>
+    <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/nvd3/1.1.15-beta/nv.d3.min.css'>
+    
+    <script src='//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js' type='text/javascript'></script>
+    <script src='//d3js.org/d3.v3.min.js' type='text/javascript'></script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/nvd3/1.1.15-beta/nv.d3.min.js' type='text/javascript'></script>
+    <script src='//nvd3.org/assets/lib/fisheye.js' type='text/javascript'></script>
+    
+    <style>
+    .rChart {
+      display: block;
+      margin-left: auto; 
+      margin-right: auto;
+      width: 500px;
+      height: 400px;
+    }  
+    </style>
+    
+  </head>
+  <body >
+    
+    <div id = 'chart1299f573d6343' class = 'rChart nvd3'></div>    
+    <script type='text/javascript'>
+ $(document).ready(function(){
+      drawchart1299f573d6343()
+    });
+    function drawchart1299f573d6343(){  
+      var opts = {
+ "dom": "chart1299f573d6343",
+"width":    500,
+"height":    400,
+"x": "Hours",
+"y": "Number.of.URLs",
+"group": "Method",
+"type": "stackedAreaChart",
+"id": "chart1299f573d6343" 
+},
+        data = [
+ {
+ "Method": "By_Hand",
+"Number.of.URLs":              0,
+"Hours": "1 Hours" 
+},
+{
+ "Method": "By_Hand",
+"Number.of.URLs":            100,
+"Hours": "2 Hours" 
+},
+{
+ "Method": "By_Hand",
+"Number.of.URLs":            200,
+"Hours": "3 Hours" 
+},
+{
+ "Method": "By_Hand",
+"Number.of.URLs":            300,
+"Hours": "4 Hours" 
+},
+{
+ "Method": "By_Hand",
+"Number.of.URLs":            400,
+"Hours": "5 Hours" 
+},
+{
+ "Method": "By_Hand",
+"Number.of.URLs":            500,
+"Hours": "6 Hours" 
+},
+{
+ "Method": "By_Hand",
+"Number.of.URLs":            600,
+"Hours": "7 Hours" 
+},
+{
+ "Method": "By_Hand",
+"Number.of.URLs":            700,
+"Hours": "8 Hours" 
+},
+{
+ "Method": "By_Hand",
+"Number.of.URLs":            800,
+"Hours": "9 Hours" 
+},
+{
+ "Method": "By_Hand",
+"Number.of.URLs":            900,
+"Hours": "10 Hours" 
+},
+{
+ "Method": "By_Hand",
+"Number.of.URLs":           1000,
+"Hours": "11 Hours" 
+},
+{
+ "Method": "With_App",
+"Number.of.URLs":              0,
+"Hours": "1 Hours" 
+},
+{
+ "Method": "With_App",
+"Number.of.URLs":           1000,
+"Hours": "2 Hours" 
+},
+{
+ "Method": "With_App",
+"Number.of.URLs":           2000,
+"Hours": "3 Hours" 
+},
+{
+ "Method": "With_App",
+"Number.of.URLs":           3000,
+"Hours": "4 Hours" 
+},
+{
+ "Method": "With_App",
+"Number.of.URLs":           4000,
+"Hours": "5 Hours" 
+},
+{
+ "Method": "With_App",
+"Number.of.URLs":           5000,
+"Hours": "6 Hours" 
+},
+{
+ "Method": "With_App",
+"Number.of.URLs":           6000,
+"Hours": "7 Hours" 
+},
+{
+ "Method": "With_App",
+"Number.of.URLs":           7000,
+"Hours": "8 Hours" 
+},
+{
+ "Method": "With_App",
+"Number.of.URLs":           8000,
+"Hours": "9 Hours" 
+},
+{
+ "Method": "With_App",
+"Number.of.URLs":           9000,
+"Hours": "10 Hours" 
+},
+{
+ "Method": "With_App",
+"Number.of.URLs":          10000,
+"Hours": "11 Hours" 
+} 
+]
+  
+      if(!(opts.type==="pieChart" || opts.type==="sparklinePlus" || opts.type==="bulletChart")) {
+        var data = d3.nest()
+          .key(function(d){
+            //return opts.group === undefined ? 'main' : d[opts.group]
+            //instead of main would think a better default is opts.x
+            return opts.group === undefined ? opts.y : d[opts.group];
+          })
+          .entries(data);
+      }
+      
+      if (opts.disabled != undefined){
+        data.map(function(d, i){
+          d.disabled = opts.disabled[i]
+        })
+      }
+      
+      nv.addGraph(function() {
+        var chart = nv.models[opts.type]()
+          .width(opts.width)
+          .height(opts.height)
+          
+        if (opts.type != "bulletChart"){
+          chart
+            .x(function(d) { return d[opts.x] })
+            .y(function(d) { return d[opts.y] })
+        }
+          
+         
+        
+          
+        chart.xAxis
+  .axisLabel("Hours")
+
+        
+        
+        chart.yAxis
+  .axisLabel("Number of URLs")
+  .width(    50)
+      
+       d3.select("#" + opts.id)
+        .append('svg')
+        .datum(data)
+        .transition().duration(500)
+        .call(chart);
+
+       nv.utils.windowResize(chart.update);
+       return chart;
+      });
+    };
+</script>
+    
+    <script></script>    
+  </body>
+</html>

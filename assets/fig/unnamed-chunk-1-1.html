@@ -1,0 +1,287 @@
+<!doctype HTML>
+<html>
+  <head>
+    <link rel='stylesheet' href='//cdn.strategiqcommerce.com/ajax/libs/rickshaw/1.2.1/rickshaw.min.css'>
+    <link rel='stylesheet' href='//ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css'>
+    
+    <script src='//d3js.org/d3.v2.min.js' type='text/javascript'></script>
+    <script src='//cdn.strategiqcommerce.com/ajax/libs/rickshaw/1.2.1/rickshaw.min.js' type='text/javascript'></script>
+    <script src='//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js' type='text/javascript'></script>
+    <script src='//ajax.googleapis.com/ajax/libs/jqueryui/1.8.15/jquery-ui.min.js' type='text/javascript'></script>
+    
+    <style>
+    .chart_container {
+        position: relative;
+        display: inline-block;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .rChart {
+        display: inline-block;
+        margin-left: 40px;
+    }
+   .yAxis {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 40px;
+   }
+   .legend {
+        position: absolute;
+        top: 0;
+        right: -160px;
+        vertical-align: top;
+    }
+    .slider {
+      margin-left: 40px;
+      margin-top: 12px;
+    }
+    </style>
+    
+  </head>
+  <body>
+    <div class='chart_container'>
+      <div id='yAxischart129d4304859c1' class='yAxis'></div>
+      <div id='chart129d4304859c1' class='rChart rickshaw'></div>
+      <div id='xAxischart129d4304859c1' class='xAxis'></div>
+      <div id='legendchart129d4304859c1' class='legend'></div>
+      <div id='sliderchart129d4304859c1' class='slider'></div>
+    </div>
+    
+    <script type='text/javascript'> 
+  var palette = new Rickshaw.Color.Palette({ scheme: "colorwheel" });
+  var chartParams = {
+ "dom": "chart129d4304859c1",
+"width":            800,
+"height":            400,
+"scheme": "colorwheel",
+"groups": "Method",
+"colors": [ "steelblue", "lightblue" ],
+"series": [
+ {
+ "data": [
+ {
+ "x":              0,
+"y":              0 
+},
+{
+ "x":           3600,
+"y":            100 
+},
+{
+ "x":           7200,
+"y":            200 
+},
+{
+ "x":          10800,
+"y":            300 
+},
+{
+ "x":          14400,
+"y":            400 
+},
+{
+ "x":          18000,
+"y":            500 
+},
+{
+ "x":          21600,
+"y":            600 
+},
+{
+ "x":          25200,
+"y":            700 
+},
+{
+ "x":          28800,
+"y":            800 
+},
+{
+ "x":          32400,
+"y":            900 
+},
+{
+ "x":          36000,
+"y":           1000 
+} 
+],
+"name": "By_Hand",
+"info": {
+ "0": {
+ "Method": "By_Hand",
+"Hours":              0 
+},
+"3600": {
+ "Method": "By_Hand",
+"Hours":           3600 
+},
+"7200": {
+ "Method": "By_Hand",
+"Hours":           7200 
+},
+"10800": {
+ "Method": "By_Hand",
+"Hours":          10800 
+},
+"14400": {
+ "Method": "By_Hand",
+"Hours":          14400 
+},
+"18000": {
+ "Method": "By_Hand",
+"Hours":          18000 
+},
+"21600": {
+ "Method": "By_Hand",
+"Hours":          21600 
+},
+"25200": {
+ "Method": "By_Hand",
+"Hours":          25200 
+},
+"28800": {
+ "Method": "By_Hand",
+"Hours":          28800 
+},
+"32400": {
+ "Method": "By_Hand",
+"Hours":          32400 
+},
+"36000": {
+ "Method": "By_Hand",
+"Hours":          36000 
+} 
+},
+"color": "steelblue" 
+},
+{
+ "data": [
+ {
+ "x":              0,
+"y":              0 
+},
+{
+ "x":           3600,
+"y":           1000 
+},
+{
+ "x":           7200,
+"y":           2000 
+},
+{
+ "x":          10800,
+"y":           3000 
+},
+{
+ "x":          14400,
+"y":           4000 
+},
+{
+ "x":          18000,
+"y":           5000 
+},
+{
+ "x":          21600,
+"y":           6000 
+},
+{
+ "x":          25200,
+"y":           7000 
+},
+{
+ "x":          28800,
+"y":           8000 
+},
+{
+ "x":          32400,
+"y":           9000 
+},
+{
+ "x":          36000,
+"y":          10000 
+} 
+],
+"name": "With_App",
+"info": {
+ "0": {
+ "Method": "With_App",
+"Hours":              0 
+},
+"3600": {
+ "Method": "With_App",
+"Hours":           3600 
+},
+"7200": {
+ "Method": "With_App",
+"Hours":           7200 
+},
+"10800": {
+ "Method": "With_App",
+"Hours":          10800 
+},
+"14400": {
+ "Method": "With_App",
+"Hours":          14400 
+},
+"18000": {
+ "Method": "With_App",
+"Hours":          18000 
+},
+"21600": {
+ "Method": "With_App",
+"Hours":          21600 
+},
+"25200": {
+ "Method": "With_App",
+"Hours":          25200 
+},
+"28800": {
+ "Method": "With_App",
+"Hours":          28800 
+},
+"32400": {
+ "Method": "With_App",
+"Hours":          32400 
+},
+"36000": {
+ "Method": "With_App",
+"Hours":          36000 
+} 
+},
+"color": "lightblue" 
+} 
+],
+"renderer": "area",
+"yLabel": true,
+"id": "chart129d4304859c1" 
+}
+  chartParams.element = document.querySelector('#chart129d4304859c1')
+  
+  var graphchart129d4304859c1 = new Rickshaw.Graph(chartParams);
+  
+  graphchart129d4304859c1.render();
+  
+  var xAxischart129d4304859c1 = new Rickshaw.Graph.Axis.Time({
+ "graph":  graphchart129d4304859c1  
+})
+var yAxischart129d4304859c1 = new Rickshaw.Graph.Axis.Y({
+ "graph":  graphchart129d4304859c1 ,
+"orientation": "left",
+"element":  document.getElementById('yAxischart129d4304859c1') ,
+"tickFormat":  Rickshaw.Fixtures.Number.formatKMBT  
+})
+graphchart129d4304859c1.render()
+var legendchart129d4304859c1 = new Rickshaw.Graph.Legend({
+ "graph":  graphchart129d4304859c1 ,
+"element":  document.getElementById('legendchart129d4304859c1')  
+})
+
+
+
+
+  
+  graphchart129d4304859c1.render();
+  
+</script> 
+    
+  </body>
+</html>

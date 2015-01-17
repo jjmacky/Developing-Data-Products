@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shiny Full URL App</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Shiny Full URL App">
+  <meta name="author" content="James McCammon">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/codefont.css"></link>
+<link rel=stylesheet href="./assets/css/fontstyles.css"></link>
+<link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Shiny Full URL App</h1>
+    <h2></h2>
+    <p>James McCammon<br/>Pointmarc Analyst</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Table of Contents</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Today we&#39;re going to learn about my web app that can be used to help
+digital marketing analyst.</p>
+
+<p>We&#39;ll learn about:</p>
+
+<ol>
+<li>Shortened URLs</li>
+<li>Full URLs</li>
+<li>How my web app can help transform the former into the latter</li>
+<li>Some challenges I encountered in creating my app</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="fontstyles" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Shortened URLs</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>In web analytics we sometimes need to transform a shortened URL into its 
+full URL counterpart.</p>
+
+<p><strong>But what is a shortened URL?</strong> <br>
+If you use Twitter you&#39;ve probably already seen one. They look like this:
+<a href="http://bit.ly/1A5Ucnx">http://bit.ly/1A5Ucnx</a>. </p>
+
+<p>There are lots of different shortening apps: <em>bitly.com</em> (formerly <em>bit.ly</em>),
+<em>owl.ly</em>, <em>tr.im</em>. And large companies may have custom shortening software that
+is used to, say, shorten links in a newsletter or promotional campaign before it is 
+sent out to an email distribution list.</p>
+
+<p>You simply enter a URL into the shortening software and it spits
+out a condensed representation of that URL. Only when you click
+on the shortened URL and are forwarded to the associated website can 
+you see the full version of the URL.</p>
+
+<p>Shortened URLs save space and mask some components of the full URL,
+like extensions used to identify where a user came from. You sometimes
+see something like <em>?cvosrc=social-paid.facebook</em> at the end of a URL,
+which is how online marketers keep track of how users are getting to a site.
+This is sometimes called a &quot;query parameter,&quot; but companies may not want
+to explictly show a link with all of the query parameters present.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Full URLs</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>When doing web analytics you sometimes need to know the full URL (this is
+the final URL destination that the shortened URL forwards to).</p>
+
+<p>Maybe you want to count the number of Twitter posts that lead to a particular
+website, but since uers are shortening the same link with different apps,
+it&#39;s impossible to total website shares unless you know where each of the 
+shortened URLs ultimatly leads.</p>
+
+<p>Or maybe you&#39;re analyzing an email campaign that uses many shortened links
+depending on the geographic market and audience it was sent to. Ideally,
+your client would hand you a mapping of the shortened URLs used in the email
+and their full URL counterparts, but in practice clients, tools, and processes 
+are all imperfect and you&#39;re often left having to create mappings like
+this yourself.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Transforming Shortened URLs</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Without an automated tool you would need to go through by hand and copy each
+shortened URL into the web browser to see where it ultimately leads. This can be 
+prohibitively time consuming, taking 7 to 10 hours to process a thousand URLs. 
+The web app I created drastically speeds up this process and allows you to continue 
+doing other work while it retrieves the URLs for you.</p>
+
+<iframe src='assets/img/fig1.html' width=100%, height=600></iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>My Shiny App</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>My app lets a user upload files in CSV or Excel format, sepecify the location
+of the shortened URLs, get the full URLs, and then download the results.</p>
+
+<div style='text-align: center;'>
+  <img src="assets/img/App_Screenshot.png", height="500", alt="A picture of my web app.">
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-6" style="background:;">
+  <hgroup>
+    <h2>Example Output</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Below is some sample output of the Shiny app I wrote. On the left side are the shortened
+links and on the right are their full counterparts. Notice there is no way to predict
+where the shortened URL ultimatly leads.</p>
+
+<div style='text-align: center;'>
+  <img src="assets/img/Output_Example.png", width="900", alt="A picture of example output.">
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="codefont" id="slide-7" style="background:;">
+  <hgroup>
+    <h2>Challenge #1</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>One feature I wanted to have for my web application was the ability
+for the user to select the worksheet with the shortened URLs if 
+an Excel file with more than one worksheet was loaded. The basic
+code outline is below.</p>
+
+<p>In practice the code is a little more complicated and includes some
+error checking in case an unreadable worksheet is selected.</p>
+
+<pre><code class="r">observe({
+  if(input$inputformat == &#39;excel&#39; &amp; !is.null(filepath()))
+    values$workbook = loadWorkbook(filepath())
+    sheetNames = getSheets(values$workbook)
+    output$worksheets = renderUI({
+    selectInput(inputId = &quot;dynamicinput&quot;, 
+                label = &quot;Select Worksheet&quot;,
+                choices = c(sheetNames,&#39;Select&#39; = &#39;select&#39;),
+                selected = &#39;select&#39;)    
+    })
+})
+
+# Some more code
+input$data = readWorksheet(values$workbook, sheet = input$dynamicinput, header = input$dataheader)
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="codefont fontstyles" id="slide-8" style="background:;">
+  <hgroup>
+    <h2>Challenge #2</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Another feature I wanted in the web app was a progress bar. The process of
+getting full URLs can take 10 to 15 minutes or longer and I thought it was
+important to show the user that the app was still working even if no results
+were immediately displayed.</p>
+
+<p>The basic code structure is shown below. A <em>withProgress</em> function is called
+to initialize the progress bar and then during every loop the progress is updated.</p>
+
+<pre><code class="r">getFwLinks = function(links) {
+  total = nrow(links)
+  FwLinks = vector(mode = &quot;character&quot;, length = total) # Create results vector
+  withProgress(min = 0, max = total, message = paste(total, &quot;rows detected. Getting forward links...&quot;), {
+  for(i in 1:total) {
+    setProgress(value = i)
+    # Get foward link of shortened URL
+  }
+}
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="codefont" id="slide-9" style="background:;">
+  <hgroup>
+    <h2>Challenge #3</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>A third challenge was that I wanted to provide error messages since there
+were many places the user might do something unexpected, such as try to
+load a worksheet that was invalid for some reason. I wrapped statements
+where I thought things could break in a try catch block.</p>
+
+<pre><code class="r">tryCatch({ readWorksheet(values$workbook, sheet = input$dynamicinput, header = input$dataheader)
+                     }, error = function(e) { seterror(&#39;excelreaderror&#39;); return() })
+</code></pre>
+
+<p>I then had a function that would take that error and produce some error
+text that would then be sent to a text output object that was printed
+in ui.R.</p>
+
+<pre><code class="r">seterror = function(error) {
+  errormessage = switch(error,
+                  &#39;excelreaderror&#39; =  &#39;Error: The workbook loaded, but there was
+                                       an error reading the specified worksheet&#39;,
+                  # Some more possible error types
+
+  output$errortext = renderUI({
+    tags$div(class = &quot;errortext&quot;, checked = NA, 
+             tags$p(errormessage))
+  })
+}
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Table of Contents'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Shortened URLs'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Full URLs'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Transforming Shortened URLs'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='My Shiny App'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='Example Output'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='Challenge #1'>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='Challenge #2'>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='Challenge #3'>
+         9
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>

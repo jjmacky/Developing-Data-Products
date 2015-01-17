@@ -1,0 +1,8 @@
+slide.fontstyles em {
+	font-style: italic;
+	color: blue;
+}
+
+slide.fontstyles strong {
+	font-weight: bold;
+}
